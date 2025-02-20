@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("hi welcome to GRIET")
+        function f1()
+        {
+            let v=document.getElementById("name").value
+            // alert(id.value)
+            // msg.innerHTML=(v*v)
+            if(v<40)
+            msg.innerHTML="better luck next time"
+            else
+            msg.innerHTML="promoted"
+        }
+    </script>
+</head>
+<body>
+        <input type="number" id="name" autofocus>
+        <submit onclick="f1()">SUBMIT</submit>
+        <hr>
+        <div id="msg"></div>
+</body>
+</html>

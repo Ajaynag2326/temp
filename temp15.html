@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            font-size: large;
+            font-weight: 700px;
+        }
+        #main
+        {
+            border: 1px solid black;
+            padding: 30px;
+        }
+        input
+        {
+            width:200px;
+            height: 30px;
+            font-size: large;
+            font-weight: 700px;
+        }
+        select
+        {
+            width:200px;
+            height: 30px;
+            font-size: large;
+            font-weight: 700px;
+        }
+        button
+        {
+            width: 210px;
+            height:40px;
+            font-size: large;
+            font-weight: 700px;
+        }
+    </style>
+    <script>
+        function contcati()
+        {
+            let n=document.getElementById("name").value;
+            let a=Number(document.getElementById("age").value);
+            let q=document.getElementById("qual").value;
+            let p=document.getElementById("place").value;
+
+            let str=`${n} | ${a} | ${q} | ${p}`;
+            msg.innerHTML=str;
+
+        }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <p><input type="text" id="name"></p>
+        <p><input type="number" id="age"></p>
+        <p><input type="text" id="qual"></p>
+        <p><select id="place">
+            <option value="Telangana">Telangana</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Maharastra">Maharastra</option>
+            <option value="kerala">kerala</option>
+        </select>
+        </p>
+        <button onclick="contcati()">Submit</button>
+        <p><div id="msg"></div></p>
+    </div>
+</body>
+</html>

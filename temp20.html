@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            font-size: large;
+            font-weight: 700px;
+        }
+        #main
+        {
+            border: 1px solid black;
+            padding: 30px;
+        }
+        input
+        {
+            width:200px;
+            height: 30px;
+            font-size: large;
+            font-weight: 700px;
+        }
+        button
+        {
+            width: 210px;
+            height:40px;
+            font-size: large;
+            font-weight: 700px;
+        }
+    </style>
+    
+    <script>
+
+        function mult()
+        {
+            let n=document.getElementById("number").value;
+            str=""
+            for(let i=1;i<=10;i++)
+            {
+                str=str+`<p>${n} x ${i} = ${n*i}</p>`;
+            }
+            msg.innerHTML=str;
+        }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <p><input type="number" id="number" onchange="mult()"></p>
+        <!-- <p><button onclick="mult()">Submit</button></p> -->
+        <p><div id="msg"></div></p>
+    </div>
+</body>
+</html>

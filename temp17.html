@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let users=[]
+
+        function checkUser()
+        {
+            let mail = document.getElementById("usr").value;
+            let pass= document.getElementById("psd").value;
+            if(mail=="" || pass =="")
+            msg.innerHTML="Enter Email and Password"
+            else 
+            {
+                for(let i=0;i<users.length;i++)
+                {
+                    if(users[i].email==mail && users[i].password==pass)
+                    {
+                        root.innerHTML=`
+                            <div><h1>WELCOME</h1></div>
+                            <button onclick="showLogin()">Logout</button>
+                        `;
+                        return;
+                    }
+                }
+                msg.innerHTML="ACCESS DENIED";
+            }
+
+        }
+        function showLogin()
+        {
+            root.innerHTML=`
+           <p><h1>Login Form</h1></p>
+           <p> <input type="email"  id="usr" placeholder="  Email ID" required></p>
+            <p> <input type="password"  id="psd" placeholder="  Password" required></p>
+           <p> <button  onclick="checkUser()" >Log in</button></p>
+            <p> <button  onclick="showForm()" >Create Account</button></p>
+            <p><div id="msg"></div></p>
+            `;
+        }
+        function showForm()
+        {
+            root.innerHTML=` <p><h1>New User Signup Form</h1></p>
+                            <div id="form">
+                            <p><input type="text"  id="name"></p>
+                            <p><input type="email"  id="email"></p>
+                            <p><input type="password"  id="pass"></p>
+                            <p><input type="date"  id="dob"></p>
+                            <p><button onclick="addData()">Register</button></p>
+                            <p><div id="data"></div></p>`;
+        }
+        function deleteUser(index)
+        {
+            users.splice(index,1);
+            showUsers();
+        }
+        function showUsers()
+        {
+            str="";
+            for(let i=0;i<users.length;i++)
+            {
+                str+=`<div>${users[i].name},
+                     ${users[i].email},
+                      ${users[i].password},
+                       ${users[i].dob}
+                          <button onclick='deleteUser(${i})'>Delete</button></div>`;
+            }
+            
+            data.innerHTML=str;
+        }
+        function addData()
+        {
+            let name=document.getElementById("name").value;
+            let email=document.getElementById("email").value;
+            let password=document.getElementById("pass").value;
+            let dob=document.getElementById("dob").value;
+            
+            
+            user={
+                
+                name:name,
+                email:email,
+                password:password,
+                dob:dob,
+                
+            };
+            users.push(user); 
+            // showUsers();
+            showLogin();
+           
+        }
+       
+
+    </script>
+    <style>
+        body
+        {
+            justify-content: center;
+            display:flex;
+            align-items: center;
+            /* height: 600px; */
+            background-color: rgb(157, 234, 239);
+        }
+         #root
+        {
+           
+            padding: 30px;
+            background-color: white;
+            border-radius: 7px;
+            border: 1px solid silver;
+          }  
+        
+        #form
+        {
+            padding-left: 36px;
+        }
+        input
+        {
+            font-size: medium;
+            font-weight:550;
+            color: rgb(57, 57, 57);
+            width: 250px;
+            height: 30px;
+            margin-bottom: 10px;
+            border: 2px solid silver;
+            border-radius: 6px;
+        }
+       #root button
+        {
+            font-size: large;
+            font-weight:bold ;
+            width: 255px;
+            height: 45px;
+            border-radius: 7px;
+            border-color:white;
+            margin-top: 20px;
+            background-color:#4e73df;
+            color:white;
+        } 
+
+    </style>
+</head>
+<body onload="showLogin()">
+    
+
+    <div id="root"> </div>
+        
+    </div>
+</body>
+</html>

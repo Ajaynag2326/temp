@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color:rgb(199, 217, 233);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            /* margin: 0; */
+        }
+        #di
+        {
+            padding: 50px;
+            border: 1px solid silver;
+            border-radius: 5px;
+            background-color: white;
+
+            
+        }
+        #msg
+        {
+            font-size: large;
+            font-weight: 600;
+            color: red;
+        }
+        input
+        {
+            font-size: medium;
+            font-weight:550;
+            color: rgb(57, 57, 57);
+            width: 250px;
+            height: 30px;
+            margin-bottom: 10px;
+            border: 2px solid silver;
+            border-radius: 6px;
+            /* border-color: white; */
+        }
+        button
+        {
+            font-size: large;
+            font-weight:bold ;
+            width: 255px;
+            height: 45px;
+            border-radius: 7px;
+            border-color:white;
+            margin-top: 20px;
+            background-color:#4e73df;
+            color:white;
+        }
+       
+    </style>
+    <script>
+        function checkUser()
+        {
+            let mail = document.getElementById("usr").value;
+            let pass= document.getElementById("psd").value;
+            msg.innerHTML=`${mail}, ${pass}`;
+
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="di">
+        
+        <p> <input type="email"  id="usr" placeholder="  Email ID" required></p>
+        <p> <input type="password"  id="psd" placeholder="  Password" required></p>
+        <button  onclick="checkUser()" >Log in</button>
+        <p><div id="msg"></div></p>
+       
+       
+        
+    </div>
+    
+</body>
+</html>

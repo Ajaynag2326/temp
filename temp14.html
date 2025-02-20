@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            font-size: large;
+            font-weight: 700px;
+        }
+        #main
+        {
+            border: 1px solid black;
+            padding: 30px;
+        }
+        input
+        {
+            width:200px;
+            height: 30px;
+            font-size: large;
+            font-weight: 700px;
+        }
+        button
+        {
+            width: 210px;
+            height:40px;
+            font-size: large;
+            font-weight: 700px;
+        }
+
+    </style>
+    <script>
+        function calc()
+        {
+            let a=Number(document.getElementById("a").value);
+            let b=Number(document.getElementById("b").value);
+            
+            // let plus='${a}+${b}=${a+b}';
+
+
+            msg1.innerHTML=(a+" + "+b+" = "+(a+b)+"<br>");
+            msg2.innerHTML=(a+" - "+b+" = "+(a-b)+"<br>");
+            msg3.innerHTML=(a+" x "+b+" = "+(a*b)+"<br>");
+            msg4.innerHTML=(a+" / "+b+" = "+(a/b)+"<br>");
+        }
+    </script>
+</head>
+<body >
+    <div id="main">
+        <p><input type="number" id="a"></p> 
+         <p><input type="number" id="b"></p>
+         <p><button onclick="calc()">SUBMIT</button></p>
+         <p><div id="msg1"></div></p>
+         <p><div id="msg2"></div></p>
+         <p><div id="msg3"></div></p>
+         <p><div id="msg4"></div></p>
+    </div>
+</body>
+</html>

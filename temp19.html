@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: rgb(194, 233, 235);
+        }
+        .container
+        {
+            display: flex;
+            justify-content: center;
+        }
+        .box
+        {
+            margin: 20px;
+            border: 2px solid gray;
+            padding: 20px;
+            background-color: whitesmoke;
+            font-weight: 700;
+            border-radius: 7px;
+        }
+        .box button
+        {
+            width: 150px;
+            height: 40px;
+            border-radius: 6px;
+            border-color: silver;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="root"> </div>
+    <script>
+      let products = [
+        {
+          id: 1,
+          name: "product 1",
+          price: 35,
+          desc: "this is the description os the product",
+          url:"https://picsum.photos/id/2/200/200"
+        },
+        {
+          id: 2,
+          name: "product 2",
+          price: 50,
+          desc: "this is the description os the product",
+          url:"https://picsum.photos/id/2/200/200"
+        },
+        {
+          id: 3,
+          name: "product 3",
+          price: 45,
+          desc: "this is the description os the product",
+          url:"https://picsum.photos/id/3/200/200"
+        },
+      ];
+    //   console.log(products[0])
+    let length=products.length
+    let str="<div  class='container'>"
+    for(let i=0;i<length;i++)
+    {
+        // str=str+products[i].name
+        str+= `<div class='box'>
+            <img src='${products[i].url}'>
+               <h1> ${products[i].name}</h1>
+               <p>${products[i].desc}</p>
+               <h3>Price: ${products[i].price}</h3>
+               <button>Add to Cart</button>
+            </div>`
+    }
+    str+="</div>"
+    root.innerHTML=str
+    </script>
+  </body>
+</html>

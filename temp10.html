@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getGrade()
+        {
+            let score=document.getElementById("marks").value
+
+            if(score>90)
+            msg.innerHTML="GRADE - A"
+            else if(score>70)
+            msg.innerHTML="GRADE - B"
+            else if(score>55)
+            msg.innerHTML="GRADE - C"
+            else if(score>40)
+            msg.innerHTML="GRADE - D"
+            else
+            msg.innerHTML="SCHOOL EGABENGINAV KADHA RA"
+        }
+        
+    </script>
+</head>
+<body>
+    <input type="text"  id="marks">
+    <button type="submit" onclick="getGrade()">SUBMIT</button>
+    <hr>
+    <div id="msg"></div>
+</body>
+</html>

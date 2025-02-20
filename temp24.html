@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let doj=new Date();
+        // document.write(doj);
+        // document.write(doj.getDate());
+        // document.write(doj.getFullYear());
+        // document.write(doj.getDay());
+        function check()
+        {
+            let date=new Date(document.getElementById("d").value);
+            
+            if(date.getDay()==3)
+            msg.innerHTML="Sorry, We are closed on Wednesday";
+        else
+        msg.innerHTML="Welcome";
+
+        }
+
+    </script>
+    <input type="date" id="d">
+    <button onclick="check()">Submit</button>
+    <hr>
+    <div id="msg"></div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <img src="assets/images/ball.png" alt="" width="100px" id="ball" />
+    </div>
+    <div>
+      <img src="assets/images/bucket.png" id="bucket" alt="" width="100px" />
+    </div>
+    <h1 style="position: absolute; top: 700px; left: 1350px" id="sc">Score:</h1>
+    <script>
+      ball.style.position = "absolute";
+      bucket.style.position = "absolute";
+
+      let i = 0,
+        j = 0;
+      let bucket_top = 500;
+      let bucket_left = 650;
+      let score = 0;
+      function f1() {
+        ball.style.top = `${i}px`;
+        ball.style.left = `${j}px`;
+        i++;
+        setTimeout(f1, 5);
+
+        if (i >= 500) {
+          i = 1;
+          j += Math.floor(Math.random() * 1400);
+          if (j > 1400) j = Math.floor(Math.random() * 1400);
+        }
+      }
+      f1();
+      bucket.style.top = `${bucket_top}px`;
+      bucket.style.left = `${bucket_left}px`;
+
+      let b = document.body;
+      b.onkeydown =
+        b.onkeyup =
+        b.onkeypress =
+          function handle(e) {
+            if (e.key == "ArrowLeft" && bucket_left - 10 >= 0)
+              bucket_left -= 10;
+            // if (e.key == "ArrowUp") bucket_top -= 10;
+            if (e.key == "ArrowRight" && bucket_left + 10 <= 1400)
+              bucket_left += 10;
+            // if (e.key == "ArrowDown") bucket_top += 10;
+            bucket.style.left = bucket_left + "px";
+            // bucket.style.top = bucket_top + "px";
+
+            if (j==bucket_left && i == 500) {
+              score += 1;
+              sc ="Score : "+score;
+              // console.log(score);
+            }
+          };
+    </script>
+  </body>
+</html>
